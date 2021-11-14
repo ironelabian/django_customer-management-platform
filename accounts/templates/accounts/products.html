@@ -1,0 +1,71 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 20px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+</table>
+
+</body>
+</html>
+
+
+<body style="background-color:rgb(180, 180, 180);">
+		<br>
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<meta charset="utf-8">
+					<title></title>
+				</head>
+				<body>
+					<h5>
+						<a style="font-size: 25px;" class="btn btn-secondary  btn-sm btn-block" href="">Products</a>
+					</h5>
+				
+				</body>
+				</html>
+					
+				
+
+				<div style="text-align: center;" class="card card-body">
+					<table class="table">
+						<tr>
+							<th >Product</th>
+							<th>Category</th>
+							<th>Price</th>
+						</tr>
+
+						{% for i in products %}
+							<tr>
+								<td>{{i.name}}</td>
+								<td>{{i.category}}</td>
+								<td>{{i.price}}</td>
+							</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			
+			
+		
+
+
+</body>
+
+
+{% endblock content %}

@@ -1,0 +1,74 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{%  include 'accounts/status.html' %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 20px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+</table>
+
+</body>
+</html>
+
+<body style="background-color: LightGray;">
+
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<meta charset="utf-8">
+					<title></title>
+				</head>
+				<body> 
+				<div class="card card-body">
+					<h5>
+						<a style="font-size: 20px" class="btn btn-primary  btn-sm btn-block" href="{% url 'place_order' %}">Create Order</a>
+					</h5>
+				</div>
+				</body>
+				</html>
+<br>
+
+<div>
+	<div style="text-align: center;">
+
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Date Ordered</th>
+					<th>Note</th>
+					<th>Status</th>
+					<th>Remove</th>
+				</tr>
+
+				{% for order in orders %}
+					<tr>
+						<td>{{order.product}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.note}}</td>
+						<td>{{order.status}}</td>
+						<td><a class="btn btn-sm btn-danger"href="{% url 'delete_order' order.id %}">Delete</a></td>
+
+					</tr>
+				{% endfor %}
+
+		
+			</table>
+	</div>
+
+</div>
+{% endblock content %}
