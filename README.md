@@ -1,0 +1,1 @@
+# django_customer-management-platform
